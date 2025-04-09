@@ -1,8 +1,8 @@
-import { AppDataSourse } from "../config/db";
+import { AppDataSource } from "../config/db";
 import { Carrera } from "../entities/Carrera.entity";
 
 // Crear el repositorio
-const carreraRepository = AppDataSourse.getRepository(Carrera);
+const carreraRepository = AppDataSource.getRepository(Carrera);
 
 // C = Create, R = Read, = U = Update, D = Delete
 
@@ -51,7 +51,7 @@ export const srvUpdateCarrera = async (pIdCarrera: number, pNombreCarrera: strin
 }
 
 // Eliminar Carrera
-export const srcDeleteCarrera = async (pIdCarrera: number) => {
+export const srvDeleteCarrera = async (pIdCarrera: number) => {
     // Buscar carrera
     const carrera = await carreraRepository.findOne({
         where: {idCarrera: pIdCarrera}
